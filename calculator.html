@@ -24,10 +24,10 @@
 				outline: solid 1px red;
 			} */
 			.calculator {
-				width: 320px;
+				width: 480px;
 				height: auto;
 				background-color: lightblue;
-				padding: 20px;
+				padding: 25px;
 				border-radius: 10px;
 			}
 
@@ -36,6 +36,12 @@
 				-webkit-appearance: none;
 				margin: 0;
 			}
+			.btn {
+				padding: 14%;
+			}
+			.btn:not([value="="]) {
+				padding: 30%;
+			}
 		</style>
 	</head>
 
@@ -43,47 +49,86 @@
 		<div class="container vh-100 d-flex align-items-center justify-content-center">
 			<div class="calculator">
 				<input
-					class="form-control form-control-lg mb-3 text-end fw-bold bg-dark text-light"
+					class="form-control form-control-lg mb-3 text-end fw-bold bg-light text-dark"
 					type="number"
 					placeholder=""
-					aria-label=".form-control-lg example" value="0"/>
-				<div class="d-flex justify-content-center align-items-center">
-					<div class="row w-100">
-						<div class="col-3 p-1 d-flex flex-column gap-1">
-							<button type="button" class="btn btn-dark" value="%" onclick="">%</button>
-							<button type="button" class="btn btn-dark" value="7" onclick="">7</button>
-							<button type="button" class="btn btn-dark" value="4" onclick="">4</button>
-							<button type="button" class="btn btn-dark" value="1" onclick="">1</button>
-							<button type="button" class="btn btn-dark" value="+/-" onclick=""><i class="fa-solid fa-plus-minus"></i></button>
-						</div>
-						<div class="col-3 p-1 d-flex flex-column gap-1">
-							<button type="button" class="btn btn-dark" value="" onclick="">CE</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">8</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">5</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">2</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">0</button>
-						</div>
-						<div class="col-3 p-1 d-flex flex-column gap-1">
-							<button type="button" class="btn btn-dark" value="" onclick="">C</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">9</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">6</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">3</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">.</button>
-						</div>
-						<div class="col-3 p-1 d-flex flex-column gap-1">
-							<button type="button" class="btn btn-dark" value="" onclick="">/</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">*</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">-</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">+</button>
-							<button type="button" class="btn btn-dark" value="" onclick="">=</button>
-						</div>
+					aria-label=".form-control-lg example"
+					value="0" />
+				<!-- First Row of Buttons -->
+				<div class="row g-2">
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="%">%</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-danger w-100" value="C">C</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-warning w-100" value="CE">CE</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="/">/</button>
+					</div>
+				</div>
+				<!-- Second Row of Buttons -->
+				<div class="row g-2 mt-2">
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="7">7</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="8">8</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="9">9</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="*">*</button>
+					</div>
+				</div>
+				<!-- Third Row of Buttons -->
+				<div class="row g-2 mt-2">
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="4">4</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="5">5</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="6">6</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="-">-</button>
+					</div>
+				</div>
+				<!-- Fourth Row of Buttons -->
+				<div class="row g-2 mt-2">
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="1">1</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="2">2</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="3">3</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="+">+</button>
+					</div>
+				</div>
+				<!-- Fifth Row of Buttons -->
+				<div class="row g-2 mt-2">
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="+/-">+/-</button>
+					</div>
+					<div class="col-3">
+						<button type="button" class="btn btn-dark w-100" value="0">0</button>
+					</div>
+					<div class="col-6">
+						<button type="button" class="btn btn-success w-100" value="=">=</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<script src="js/calculator.js">
-
-		</script>
+		<script src="js/calculator.js"></script>
 	</body>
 </html>
