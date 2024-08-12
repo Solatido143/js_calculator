@@ -48,7 +48,7 @@
 			<div class="calculator">
 				<input
 					class="form-control form-control-lg mb-3 text-end fw-bold bg-light text-dark"
-					type="number"
+					type="text"
 					placeholder=""
 					aria-label=".form-control-lg example"
 					value="0" />
@@ -56,13 +56,13 @@
 					<!-- First Row of Buttons -->
 					<div class="row">
 						<div class="col-3">
-							<button type="button" class="btn btn-dark w-100" value="%" onclick="handleOperatorClick('%')">%</button>
+							<button type="button" class="btn btn-dark w-100" value="%" onclick="handleModuloClick('%')">%</button>
 						</div>
 						<div class="col-3">
-							<button type="button" class="btn btn-danger w-100" value="C" onclick="handleOperatorClick('C')">C</button>
+							<button type="button" class="btn btn-danger w-100" value="C" onclick="handleClear()">C</button>
 						</div>
 						<div class="col-3">
-							<button type="button" class="btn btn-warning w-100" value="CE" onclick="handleOperatorClick('CE')">CE</button>
+							<button type="button" class="btn btn-warning w-100" value="CE" onclick="handleClearEntry('CE')">CE</button>
 						</div>
 						<div class="col-3">
 							<button type="button" class="btn btn-dark w-100" value="/" onclick="handleOperatorClick('/')">/</button>
@@ -116,16 +116,16 @@
 					<!-- Fifth Row of Buttons -->
 					<div class="row">
 						<div class="col-3">
-							<button type="button" class="btn btn-dark w-100" value="+/-" onclick="handleOperatorClick('+/-')">+/-</button>
+							<button type="button" class="btn btn-dark w-100" value="+/-" onclick="handleSymbolClick()">+/-</button>
 						</div>
 						<div class="col-3">
 							<button type="button" class="btn btn-dark w-100" value="0" onclick="handleNumberClick(0)">0</button>
 						</div>
 						<div class="col-3">
-							<button type="button" class="btn btn-dark w-100" value="." onclick="handleOperatorClick('.')">.</button>
+							<button type="button" class="btn btn-dark w-100" value="." onclick="handleDotClick('.')">.</button>
 						</div>
 						<div class="col-3 flex-grow-1">
-							<button type="button" class="btn btn-success w-100" value="=" onclick="handleOperatorClick('=')">=</button>
+							<button type="button" class="btn btn-success w-100" value="=" onclick="handleEqualsClick('=')">=</button>
 						</div>
 					</div>
 				</div>
