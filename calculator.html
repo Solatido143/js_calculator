@@ -24,7 +24,7 @@
 				outline: solid 1px red;
 			} */
 			.calculator {
-				width: 480px;
+				min-width: 480px;
 				height: auto;
 				background-color: lightblue;
 				padding: 25px;
@@ -36,11 +36,9 @@
 				-webkit-appearance: none;
 				margin: 0;
 			}
+
 			.btn {
-				padding: 14%;
-			}
-			.btn:not([value="="]) {
-				padding: 30%;
+				height: 75px;
 			}
 		</style>
 	</head>
@@ -54,76 +52,81 @@
 					placeholder=""
 					aria-label=".form-control-lg example"
 					value="0" />
-				<!-- First Row of Buttons -->
-				<div class="row g-2">
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="%">%</button>
+				<div class="d-flex flex-column gap-3">
+					<!-- First Row of Buttons -->
+					<div class="row">
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="%" onclick="handleOperatorClick('%')">%</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-danger w-100" value="C" onclick="handleOperatorClick('C')">C</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-warning w-100" value="CE" onclick="handleOperatorClick('CE')">CE</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="/" onclick="handleOperatorClick('/')">/</button>
+						</div>
 					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-danger w-100" value="C">C</button>
+					<!-- Second Row of Buttons -->
+					<div class="row">
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="7" onclick="handleNumberClick(7)">7</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="8" onclick="handleNumberClick(8)">8</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="9" onclick="handleNumberClick(9)">9</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="*" onclick="handleOperatorClick('*')">*</button>
+						</div>
 					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-warning w-100" value="CE">CE</button>
+					<!-- Third Row of Buttons -->
+					<div class="row">
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="4" onclick="handleNumberClick(4)">4</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="5" onclick="handleNumberClick(5)">5</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="6" onclick="handleNumberClick(6)">6</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="-" onclick="handleOperatorClick('-')">-</button>
+						</div>
 					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="/">/</button>
+					<!-- Fourth Row of Buttons -->
+					<div class="row">
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="1" onclick="handleNumberClick(1)">1</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="2" onclick="handleNumberClick(2)">2</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="3" onclick="handleNumberClick(3)">3</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="+" onclick="handleOperatorClick('+')">+</button>
+						</div>
 					</div>
-				</div>
-				<!-- Second Row of Buttons -->
-				<div class="row g-2 mt-2">
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="7">7</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="8">8</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="9">9</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="*">*</button>
-					</div>
-				</div>
-				<!-- Third Row of Buttons -->
-				<div class="row g-2 mt-2">
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="4">4</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="5">5</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="6">6</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="-">-</button>
-					</div>
-				</div>
-				<!-- Fourth Row of Buttons -->
-				<div class="row g-2 mt-2">
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="1">1</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="2">2</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="3">3</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="+">+</button>
-					</div>
-				</div>
-				<!-- Fifth Row of Buttons -->
-				<div class="row g-2 mt-2">
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="+/-">+/-</button>
-					</div>
-					<div class="col-3">
-						<button type="button" class="btn btn-dark w-100" value="0">0</button>
-					</div>
-					<div class="col-6">
-						<button type="button" class="btn btn-success w-100" value="=">=</button>
+					<!-- Fifth Row of Buttons -->
+					<div class="row">
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="+/-" onclick="handleOperatorClick('+/-')">+/-</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="0" onclick="handleNumberClick(0)">0</button>
+						</div>
+						<div class="col-3">
+							<button type="button" class="btn btn-dark w-100" value="." onclick="handleOperatorClick('.')">.</button>
+						</div>
+						<div class="col-3 flex-grow-1">
+							<button type="button" class="btn btn-success w-100" value="=" onclick="handleOperatorClick('=')">=</button>
+						</div>
 					</div>
 				</div>
 			</div>
