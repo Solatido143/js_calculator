@@ -3,6 +3,15 @@ let previousNumber = "";
 let operator = "";
 const display = document.querySelector("input[type='text']");
 
+display.addEventListener("input", () => {
+	const validChars = /^[0-9]*[.]?[0-9]*$/;
+	const currentInput = display.value;
+
+	if (!validChars.test(currentInput)) {
+		display.value = currentInput.slice(0, -1);
+	}
+});
+
 function handleNumberClick(num) {
 	num = num.toString();
 
