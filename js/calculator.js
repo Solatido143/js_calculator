@@ -6,16 +6,29 @@ const display = document.querySelector("input[type='text']");
 function handleNumberClick(num) {
 	num = num.toString();
 
-	if (display.value === "0" && num !== ".") {
-		currentNumber = num;
-	} else if (num === "." && !currentNumber.includes(".")) {
-		currentNumber += num;
-	} else if (num !== ".") {
-		currentNumber += num;
+	if (display.value === "0") {
+		if (num === ".") {
+			currentNumber = "0.";
+		} else {
+			currentNumber = num;
+		}
+		display.value = currentNumber;
+		return;
 	}
 
-	display.value = currentNumber;
+	if (num === "." && !currentNumber.includes(".")) {
+		currentNumber += num;
+		display.value = currentNumber;
+		return;
+	}
+
+	if (num !== ".") {
+		currentNumber += num;
+		display.value = currentNumber;
+	}
 }
+
+
 
 function handleOperatorClick(op) {
 	if (currentNumber !== "") {
