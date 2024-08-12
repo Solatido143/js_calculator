@@ -4,7 +4,16 @@ let operator = "";
 const display = document.querySelector("input[type='text']");
 
 function handleNumberClick(num) {
-	currentNumber += num.toString();
+	num = num.toString();
+
+	if (display.value === "0" && num !== ".") {
+		currentNumber = num;
+	} else if (num === "." && !currentNumber.includes(".")) {
+		currentNumber += num;
+	} else if (num !== ".") {
+		currentNumber += num;
+	}
+
 	display.value = currentNumber;
 }
 
@@ -35,9 +44,17 @@ function handleModuloClick() {
 }
 
 function handleSymbolClick() {
-	if (currentNumber !== "" && currentNumber > 0) {
-		currentNumber = -currentNumber;
-		display.value = currentNumber.toString();
+	if (currentNumber !== "") {
+		currentNumber = (-parseFloat(currentNumber)).toString();
+		display.value = currentNumber;
+	}
+}
+
+function handleDotClick() {
+	if (currentNumber === "") {
+		display.value = 0 + ".";
+	} else {
+		display.value = currentNumber + ".";
 	}
 }
 
